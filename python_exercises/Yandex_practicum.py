@@ -1,5 +1,4 @@
 # Кондиционер (верно)
-```python
 t = input().split()
 m = input()
 t[0] = int(t[0])
@@ -8,10 +7,9 @@ if (m == 'freeze' and t[0] > t[1]) or (m == 'heat' and t[0] < t[1]) or (m == 'au
     print(t[1])
 else:
     print(t[0])
-```
+
 
 # Треугольник (верно)
-```python
 a = int(input())
 b = int(input())
 c = int(input())
@@ -19,10 +17,9 @@ if a + b > c and a + c > b and b + c > a:
     print("YES")
 else:
     print("NO")
-```
+
 
 # Телефонные номера (WA, тест 1)
-```python
 n1 = ''.join(list(filter(lambda x: x not in ')(-+', input())))
 n2 = ''.join(list(filter(lambda x: x not in ')(-+', input())))
 n3 = ''.join(list(filter(lambda x: x not in ')(-+', input())))
@@ -40,10 +37,9 @@ for i in range(len(ed) - 1):
         print("YES")
     else:
         print("NO")
-```
+
 
 # Уравнение с корнем (RE, тест 4)
-```python
 a = int(input())
 b = int(input())
 c = int(input())
@@ -63,10 +59,9 @@ else:
                 print(int(x))
             else:
                 print("NO SOLUTION")
-```
+
 
 # Скорая помощь (не сходятся ответы с ответами из примеров)
-```python
 kv1, et, kv2, pod2, et2 = map(lambda x: int(x), input().split())
 if kv2 % (et2 + et * (pod2 - 1)) > 0:
     pl = kv2 // (et2 + et * (pod2 - 1)) + 1
@@ -89,6 +84,7 @@ if kv2 not in range(((vet1 - 1) * pl + 1), vet1 * pl):
     et1 = -1
 print(pod1, et1)
 
+
 #Расстановка ноутбуков (WA, тест 3)
 inp = [int(c) for c in input().split(' ')]
 S_laptops = inp[0] * inp[1] + inp[2] * inp[3]
@@ -105,10 +101,9 @@ for i in range(len(m)):
             break
     break
 print(a, b)
-```
+
 
 # Детали (TL, тест 14)
-```python
 weight = [int(n) for n in input().split(' ')]
 d = 0
 while lst[0] >= lst[1]:
@@ -119,10 +114,9 @@ while lst[0] >= lst[1]:
     d += cm
     lst[0] = nok + kom
 print(d)
-```
+
 
 # Метро (ответ не сходится с ответом из примера, WA тест 1)
-```python
 train_int_path1 = int(input())
 train_int_path2 = int(input())
 trains_path1 = int(input())
@@ -141,10 +135,9 @@ if len(list(set(time_path1) & set(time_path2))) == 0:
     print(-1)
 else:
     print(max([min1, min2]), min([max1, max2]))
-```
+
 
 # Узник замка ИФ (WA, тест 5)
-```python
 a = input()
 b = input()
 c = input()
@@ -161,10 +154,9 @@ if len(small_bsides) >= 2:
     print("YES")
 else:
     print("NO")
-```
+
 
 # Система линейных уравнений - 2 (WA, тест 1)
-```python
 a = float(input())
 b = float(input())
 c = float(input())
@@ -189,4 +181,3 @@ if a == 0 and c == 0:
 #любая пара чисел (x,y) является решением (предположение)
 if a == 0 and b == 0 and c == 0 and d == 0:
     print(5)
-```
