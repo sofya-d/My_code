@@ -1,6 +1,4 @@
 # K-mers Counter
-
-```python
 def k_mer_counter(dna_seqs, k):
 # counts a quantity of original and repetitive k-mers (substrings of length k contained within a biological sequence)
 # input:
@@ -33,4 +31,3 @@ def k_mer_counter(dna_seqs, k):
 
 dna_seqs = {1:"atatacta", 2:"tgcacaca"}
 k_mer_counter(dna_seqs, 8)
-```
