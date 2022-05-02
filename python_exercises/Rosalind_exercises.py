@@ -1,7 +1,5 @@
 # 1. Installing Python.
-
-```python
-"The Zen of Python, by Tim Peters
+"""The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
 Explicit is better than implicit.
@@ -21,21 +19,17 @@ Now is better than never.
 Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!"
-```
+Namespaces are one honking great idea -- let's do more of those!"""
+
 
 # 2. Variables and Some Arithmetic.
-
-```python
 a = int(input())
 b = int(input())
 square_c = a ** 2 + b ** 2
 print(square_c)
-```
+
 
 # 3. Strings and Lists.
-
-```python
 s = raw_input()
 a = int(raw_input())
 b = int(raw_input())
@@ -45,11 +39,9 @@ asb = s[a:(b + 1)]
 csd = s[c:(d + 1)]
 ans = f"{asb} {csd}"
 print(ans)
-```
+
 
 # 4. Conditions and Loops.
-
-```python
 a = int(raw_input())
 b = int(raw_input())
 sum = 0
@@ -57,39 +49,32 @@ for num in range(a, b + 1):
     if num % 2 == 1:
         sum += num
 print(sum)
-```
+
 
 # 5. Working with Files.
-
-```python
 with open('rosalind_ini.txt', 'r') as input_file, open('answer.txt', 'w') as output_file:
     count = -1
     for line in input_file:
         count += 1
         if count % 2 == 1:
             output_file.write(line)
-```
+
 
 # 6. Dictionaries.
-
-```python
 data = input().split()
 from collections import Counter
 data = dict(Counter(data))
 for key in data:
     print(key, data[key])
-```
-# 7. Let's Be Practical.
 
-```python
+
+# 7. Let's Be Practical.
 seq = input()
 counts = collections.Counter(seq)
 print( counts['A'], counts['C'], counts['G'], counts['T'], end = " ")
 
-```
-# 8. GenBank Introduction.
 
-```python
+# 8. GenBank Introduction.
 from Bio import Entrez
 
 def genbank(genus, dtstart, dtend):
@@ -100,11 +85,9 @@ def genbank(genus, dtstart, dtend):
     return record["Count"]
 
 print(genbank("Sulfurospirillum", "2007/10/25", "2009/02/03"))
-```
+
 
 # 9. Data Formats.
-
-```python
 from Bio import Entrez
 from Bio import SeqIO
 
@@ -126,18 +109,16 @@ ans_handle = Entrez.efetch(db = "nucleotide", id = IDs[ans_i], rettype = "fasta"
 ans_record = ans_handle.read()
 
 print(ans_record)
-```
+
 
 # 10. FASTQ format introduction.
-
-```python
 from Bio import SeqIO
 
 count = SeqIO.convert("rosalind_tfsq.txt", "fastq", "seq.fasta", "fasta")
 print(f"{count} records converted")
 
+
 # 7. Read Quality Distribution.
-
 from Bio import SeqIO
 
 with open('fastq_threshold.txt', 'r') as fastq_threshold, open('fastq.txt', 'w') as fastq:
@@ -154,10 +135,9 @@ for record in SeqIO.parse("fastq.txt", "fastq"):
         count += 1
 
 print(count)
-```
+
+
 # 11. Read Quality Distribution.
-
-```python
 from Bio import SeqIO
 
 with open('fastq_threshold.txt', 'r') as fastq_threshold, open('fastq.txt', 'w') as fastq:
@@ -174,11 +154,9 @@ for record in SeqIO.parse("fastq.txt", "fastq"):
         count += 1
 
 print(count)
-```
+
 
 # 12. Read Filtration by Quality.
-
-```python
 from Bio import SeqIO
 
 with open('fastq_threshold.txt', 'r') as fastq_threshold, open('fastq.txt', 'w') as fastq:
@@ -201,11 +179,9 @@ for record in SeqIO.parse("fastq.txt", "fastq"):
         count += 1
 
 print(count)
-```
+
 
 # 13. Base Quality Distribution.
-
-```python
 from Bio import SeqIO
 
 with open('fastq_threshold.txt', 'r') as fastq_threshold, open('fastq.txt', 'w') as fastq:
@@ -235,4 +211,3 @@ for score in all_phred:
         pos_count += 1
 
 print(pos_count)
-```
