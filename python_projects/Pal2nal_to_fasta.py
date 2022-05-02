@@ -1,5 +1,4 @@
 # .pal2nal to .fasta converter
-```python
 def pal2nal_2_fasta(lines):
 # converts .pal2nal format to .fasta format
 # input:
@@ -41,4 +40,3 @@ def pal2nal_2_fasta(lines):
         lines[i] = f">{lines[i]}\n"
         lines[i + seq_parts_num] = f"{lines[i + seq_parts_num]}\n"
     return(lines)
-```
