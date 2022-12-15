@@ -1,5 +1,3 @@
-
-# 4
 #PACKAGES
 library(factoextra)
 library(RColorBrewer)
@@ -55,7 +53,7 @@ fviz_nbclust(de_heatmap, kmeans, method = "wss")+
 fviz_nbclust(de_heatmap, kmeans, method = "silhouette")+
   labs(subtitle = "Silhouette method")
 
-# GAP STATISTIC (50 ïğåäóïğåæäåíèé "íå ñîøëîñü çà 10 èòåğàöèé", result: 2)
+# GAP STATISTIC (50 Ã¯Ã°Ã¥Ã¤Ã³Ã¯Ã°Ã¥Ã¦Ã¤Ã¥Ã­Ã¨Ã© "Ã­Ã¥ Ã±Ã®Ã¸Ã«Ã®Ã±Ã¼ Ã§Ã  10 Ã¨Ã²Ã¥Ã°Ã Ã¶Ã¨Ã©", result: 2)
 set.seed(2022)
 fviz_nbclust(de_heatmap, kmeans, nstart = 25,  method = "gap_stat", nboot = 500)+
   labs(subtitle = "Gap statistic method")
@@ -485,6 +483,3 @@ heatmap.2(less15_heatmapmx, main = "DE genes z-score(log2(FDR)) (|logFC| > 6) 15
 less15_heatmap$cluster <- less15_kmeans.DEgenes.clusters
 less15_heatmap <- less15_heatmap[, c(1, 5, 2:4)]
 write.table(less15_heatmap, file = "less15_DE_FDR.txt", sep = "\t", row.names = FALSE, col.names = TRUE, quote = FALSE)
-
-
-
