@@ -1,5 +1,3 @@
-
-# 5
 # setup
 library(tidyverse)
 library(ggplot2)
@@ -147,4 +145,3 @@ plot <- ggplot(m1_plot[["hour_15"]], aes(x = sample, y = mean, fill = gene))+
 grid.draw(plot)
 
 dev.off()
-
