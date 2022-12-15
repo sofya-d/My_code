@@ -1,5 +1,3 @@
-
-# 7
 ## set up
 library(chromVAR)
 library(BSgenome)
