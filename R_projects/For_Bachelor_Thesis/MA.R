@@ -1,5 +1,3 @@
-
-# 2
 # setup
 library(RColorBrewer)
 library(wordcloud)
@@ -14,7 +12,7 @@ pdf("MA_plots.pdf", width = 6, height = 6)
 for (i in names(cont)){
         lrt <- glmLRT(fit, contrast = cont[[i]])
         
-        #òàáëèöà äëÿ ãðàôèêà
+        #Ã²Ã Ã¡Ã«Ã¨Ã¶Ã  Ã¤Ã«Ã¿ Ã£Ã°Ã Ã´Ã¨ÃªÃ 
         sorted <- topTags(lrt, n=nrow(lrt$table))
         final <- sorted$table
         final$cluster_ID <- rownames(final)
@@ -65,5 +63,3 @@ rownames(up_down) <- up_down$regulation
 up_down <- as.matrix(up_down[, 2:10])
 
 pheatmap(mat = up_down, kmeans_k = NA, border_color = NA, cellwidth = NA, cellheight = NA, scale = "none", cluster_rows = F, cluster_cols = F, legend = T, show_rownames = T, show_colnames = T, main = "Number of up and down regulated DEC", angle_col = 315, display_numbers = TRUE, fontsize_number = 12)
-
-
