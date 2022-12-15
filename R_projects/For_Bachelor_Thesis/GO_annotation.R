@@ -1,5 +1,3 @@
-
-# 3
 ## CREATE VENN DIAGRAMS OF DE GENES
 # PREPARE INPUT
 library(edgeR)
@@ -414,4 +412,3 @@ for (name in names(go_int)){
 }
 
 dev.off()
-
