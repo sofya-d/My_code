@@ -1,14 +1,5 @@
 ## guide https://github.com/Linlab-slu/TSSr
 
-## download bam
-# for i in *merged.sorted_mapped.bam; do cp $i ./bam; done
-# tar -zcvf bam.tar.gz ./bam
-# scp sumepremos@178.213.245.123:/data5/sophia/data/mm10/reads_mapped/bam.tar.gz /mnt/c/users/User/Documents/
-## rename .bam
-## upload .bam on server
-# cp /mnt/c/users/User/Documents/bam.tar.gz /home/sofya
-# scp /home/sofya/bam.tar.gz sofyad@89.108.82.59:/home/ruslan/school/students/sofya
-
 # set up
 library(Rsamtools)
 library(GenomicRanges)
@@ -84,8 +75,8 @@ annotateCluster(myTSSr, clusters = "consensusClusters",filterCluster = TRUE,
 # represented by a single genomic range.
 # Use 'single.strand.genes.only=FALSE' to get all the genes in a GRangesList
 # object, or use suppressMessages() to suppress this message.
-# Οπεδσοπεζδενθε:
-#   Β .get_cds_IDX(mcols0$type, mcols0$phase) :
+# ΓΓ°Γ¥Γ¤Γ³Γ―Γ°Γ¥Γ¦Γ¤Γ¥Γ­Γ¨Γ¥:
+#   Γ‚ .get_cds_IDX(mcols0$type, mcols0$phase) :
 #   The "phase" metadata column contains non-NA values for features of type
 # stop_codon. This information was ignored.
 
@@ -190,6 +181,3 @@ for (comparison in names(shifts)){
 for (name in names(shifts)){
   write.table(shifts[[name]][["all"]], file = paste("~/tssr/promoter_shifts/", name, ".txt", sep = ""), quote = F, sep = "\t", row.names = F, col.names = T)
 }
-
-
-
