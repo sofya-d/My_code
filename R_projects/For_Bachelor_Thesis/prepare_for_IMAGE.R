@@ -3,10 +3,6 @@
 # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5793788/
 # https://github.com/JesperGrud/IMAGE
 
-## paths
-# export PATH=/data1/Shared/bioinftools/R-4.0.1/bin:/data5/sophia/pipelines/iRNA:data5/sophia/pipelines/subread-2.0.3-source/bin:$PATH
-# /data5/sophia/pipelines/IMAGE
-
 ## prepare table with gene expression data with raw counts
 # structure preparetion
 exp <- mm10_level2[, c(1:5, 17, 19:26, 7:16, 18)]
@@ -246,18 +242,3 @@ write.table(en, file = "enchancer.txt", sep = "\t", row.names = FALSE, col.names
 write.table(exp[, c(1:6, 8:28)], file = "expression.txt", sep = "\t", row.names = FALSE, col.names = T, quote = FALSE)
 
 write.table(exp, file = "~/9_IMAGE/expression_blank.txt", sep = "\t", row.names = FALSE, col.names = T, quote = FALSE)
-
-
-
-
-# nohup perl configureHomer.pl &
-# chmod +x IMAGE.pl
-# PATH=$PATH:/home/ruslan/.//bin/
-# nohup /home/ruslan/school/students/sofya/image_prog/IMAGE.pl -region /home/ruslan/school/students/sofya/image/enhancer.txt -expression /home/ruslan/school/students/sofya/image/expression_blank.txt -fasta /home/ruslan/school/students/sofya/image/mm10.fasta -RNADesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -EnhancerDesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -n image &
-
-# nohup ~/image_prog/IMAGE.pl -region ~/image/enhancer.txt -expression ~/image/expression_blank.txt -fasta ~/image/mm10.fasta -RNADesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -EnhancerDesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -n image &
-
-# not working
-# nohup ./IMAGE.pl -region ./enhancer.txt -expression ./expression_blank.txt -fasta ./mm10.fasta -RNADesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -EnhancerDesign 1 1 2 2 3 3 4 4 5 5 6 6 7 7 8 8 9 9 10 10 -n image &
-
-# /home/ruslan/IMAGE/IMAGE.pl  -region /home/ruslan/X_factor/x_factor_exp_tab_PROMOTERS_for_IMAGE.txt  -expression /home/ruslan/X_factor/x_factor_exp_tab_for_IMAGE_uniqGenes.txt -fasta /home/ruslan/mm10/mus.fasta -RNADesign 9 10 7 7 5 6 4 3 2 1 9 10 8 7 6 5 4 3 2 1 9 10 8 8 5 6 4 3 2 1  -EnhancerDesign 9 10 7 7 5 6 4 3 2 1 9 10 8 7 6 5 4 3 2 1 9 10 8 8 5 6 4 3 2 1   -p 30 -n Test_Matsumoto
