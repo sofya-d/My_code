@@ -1,6 +1,3 @@
-
-# 6
-
 control <- c()
 
 for (name in names(lrts)){
@@ -70,27 +67,6 @@ write.table(top200, file = "top200.bed", quote = FALSE, sep = "\t", row.names = 
 write.table(other, file = "other.bed", quote = FALSE, sep = "\t", row.names = FALSE, col.names = FALSE)
 
 
-## comands in WSL and server
-## in WSL copy .bed files from Windows directory to server directory
-# scp /mnt/c/users/User/Documents/6_MEME/all/control.bed sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/all
-# scp /mnt/c/users/User/Documents/6_MEME/all/experiment.bed sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/all
-# scp /mnt/c/users/User/Documents/6_MEME/top200/top200.bed sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/top200
-# scp /mnt/c/users/User/Documents/6_MEME/top200/other.bed sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/top200
-
-## make .fasta files using getfasta from bedtools
-# /usr/bin/bedtools getfasta -name -s -fo experiment.fasta -fi /data5/sophia/data/mm10_meme/mm10.fa -bed experiment.bed
-# /usr/bin/bedtools getfasta -name -s -fo control.fasta -fi /data5/sophia/data/mm10_meme/mm10.fa -bed control.bed
-# /usr/bin/bedtools getfasta -name -s -fo top200.fasta -fi /data5/sophia/data/mm10_meme/mm10.fa -bed top200.bed
-# /usr/bin/bedtools getfasta -name -s -fo other.fasta -fi /data5/sophia/data/mm10_meme/mm10.fa -bed other.bed
-## if you get an error "malformed BED entry at line 9841. Start Coordinate detected that is < 0. Exiting." use following command to delete the lina that cause problems:
-## sed -i '9841d' other.bed
-
-## copy .fasta files from servers to Windows directory
-# tar -zcvf fasta.tar.gz ./fasta
-# scp sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/all/fasta.tar.gz /mnt/c/users/User/Documents/6_MEME/all
-# scp sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/top200/fasta.tar.gz /mnt/c/users/User/Documents/6_MEME/top200
-
-
 ## experiment separated by different matter
 names <- c("exp_Ifn", "exp_CpG", "exp_Ifn.CpG")
 cluster_ids <- list()
@@ -128,17 +104,3 @@ for (vec in names(cluster_ids)){
   
   write.table(bed, file = paste(vec, ".bed", sep = ""), quote = FALSE, sep = "\t", row.names = FALSE, col.names = FALSE)
 }
-
-
-## comands in WSL and server
-## in WSL copy .bed files from Windows directory to server directory
-# scp /mnt/c/users/User/Documents/6_MEME/all_matter/all_matter.zip sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/
-
-## make .fasta files using getfasta from bedtools
-# sh -c 'for i in *.bed; do /usr/bin/bedtools getfasta -name -s -fo ${i%.bed*}.fasta -fi /data5/sophia/data/mm10_meme/mm10.fa -bed $i; done'
-## if you get an error "malformed BED entry at line 9841. Start Coordinate detected that is < 0. Exiting." use following command to delete the lina that cause problems:
-## sed -i '9841d' other.bed
-
-## copy .fasta files from servers to Windows directory
-# tar -zcvf fasta.tar.gz ./fasta
-# scp sumepremos@178.213.245.123:/data5/sophia/data/mm10_meme/all_matter/fasta.tar.gz /mnt/c/users/User/Documents/6_MEME/all_matter
