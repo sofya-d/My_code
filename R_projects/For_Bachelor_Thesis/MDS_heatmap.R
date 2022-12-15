@@ -1,4 +1,3 @@
-# 1
 #SETUP
 library(edgeR)
 library(heatmap3)
@@ -113,4 +112,3 @@ scaled_norm_counts <- t(apply(scaled_norm_counts, 1, cal_z_score))
 
 # create a scaled heat map
 heatmap3(scaled_norm_counts, main = "Normalized counts (|log2(TPM)| z-scores)", scale = "none", Rowv = NA)
-
